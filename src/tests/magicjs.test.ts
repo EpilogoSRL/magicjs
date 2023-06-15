@@ -57,9 +57,7 @@ describe('magicjs', () => {
   });
 
   it('writes code in React', async () => {
-    const {
-      loading,
-    } = useMagicJS('write a SQL query to select all users from the USERS table', z.string());
+    const [, loading] = useMagicJS('write a SQL query to select all users from the USERS table', z.string());
 
     expect(loading).to.eql(true);
 

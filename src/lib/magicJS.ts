@@ -17,7 +17,7 @@ export type MagicJS = {
 export const magicJSContext = {
   fetch: null,
   openAIApiKey: null as string,
-  model: 'gpt-3.5-turbo-0613' as ('gpt-3.5-turbo-0613' | 'gpt-4-0613' | undefined),
+  model: undefined as ('gpt-3.5-turbo-0613' | 'gpt-4-0613' | undefined),
   React: null as (undefined | {
     useState: any;
     useEffect: any;
@@ -25,7 +25,7 @@ export const magicJSContext = {
   }),
 };
 
-function initializeMagicJS(ctx: typeof magicJSContext) {
+export function initializeMagicJS(ctx: typeof magicJSContext) {
   magicJSContext.fetch = ctx.fetch;
   magicJSContext.openAIApiKey = ctx.openAIApiKey;
   magicJSContext.model = ctx.model;
@@ -51,7 +51,7 @@ export const magicJS = (async <Data, Zod extends ZodType = ZodType>(
     body: JSON.stringify({
       // Deterministic results
       temperature: 0,
-      model: magicJSContext.model,
+      model: magicJSContext.model ?? 'gpt-3.5-turbo-0613',
       function_call: { 'name': 'callback' },
       functions: [{
         name: 'callback',

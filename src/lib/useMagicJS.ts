@@ -6,11 +6,11 @@ import { UndefinedOptional } from '../Types';
 export type UseMagicJS = {
   initialize: (params: UndefinedOptional<typeof magicJSContext>) => void;
 
-  <Data, Zod extends ZodType = ZodType>(...params: MagicJSParams<Data, Zod>): {
-    result: z.infer<Zod> | null;
-    loading: boolean;
-    error: Error | null;
-  };
+  <Data, Zod extends ZodType = ZodType>(...params: MagicJSParams<Data, Zod>): [
+    z.infer<Zod> | null,
+    boolean,
+    Error | null,
+  ];
 };
 
 export const useMagicJS = (<Data, Zod extends ZodType = ZodType>(
@@ -40,13 +40,13 @@ export const useMagicJS = (<Data, Zod extends ZodType = ZodType>(
         setLoading(false);
       }
     })();
-  }, [stringify([what, data]), setResult, setError]);
+  }, [stringify([what, data]), setLoading, setResult, setError]);
 
-  return {
+  return [
     result,
     loading,
     error,
-  };
+  ];
 }) as UseMagicJS;
 
 useMagicJS.initialize = magicJS.initialize;
