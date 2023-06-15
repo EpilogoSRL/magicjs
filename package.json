@@ -42,7 +42,7 @@
     "chai-as-promised": "7.1.1",
     "chai-spies": "1.0.0",
     "chai-subset": "1.6.0",
-    "css-loader": "^6.7.4",
+    "css-loader": "^6.8.1",
     "css-minimizer-webpack-plugin": "^5.0.0",
     "dprint": "^0.37.1",
     "file-loader": "^6.2.0",
