@@ -1146,10 +1146,10 @@
   dependencies:
     "@types/node" "*"
 
-"@types/chai-as-promised@0.0.31":
-  version "0.0.31"
-  resolved "https://registry.yarnpkg.com/@types/chai-as-promised/-/chai-as-promised-0.0.31.tgz#e1e905ea6d971dafcad36560c8f1f7a7d690c5e5"
-  integrity sha512-DWT96QeM5AeASIkChnFtEOy6O45WvKmaw27MPhAKLkx06TaFNqrzJuWVurKjCEo3PqVV89YLR2iVON8PhTRaLg==
+"@types/chai-as-promised@7.1.6":
+  version "7.1.6"
+  resolved "https://registry.yarnpkg.com/@types/chai-as-promised/-/chai-as-promised-7.1.6.tgz#3b08cbe1e7206567a480dc6538bade374b19e4e1"
+  integrity sha512-cQLhk8fFarRVZAXUQV1xEnZgMoPxqKojBvRkqPCKPQCzEhpbbSKl1Uu75kDng7k5Ln6LQLUmNBjLlFthCgm1NA==
   dependencies:
     "@types/chai" "*"
 
